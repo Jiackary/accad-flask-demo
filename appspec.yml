@@ -5,14 +5,14 @@ files:
     destination: /home/ec2-user/accad-flask-demo
 hooks:
   ApplicationStop:
-    - location: stop-server.sh
+    - location: scripts/stop-server.sh
       timeout: 60
       runas: root
   AfterInstall:
-    - location: install-dependencies.sh
+    - location: scripts/install-dependencies.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: start-server.sh
+    - location: scripts/start-server.sh
       timeout: 60
       runas: root
