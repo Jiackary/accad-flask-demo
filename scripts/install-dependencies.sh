@@ -6,13 +6,6 @@ echo "Installing dependencies..."
 # Define DEPLOY_DIR FIRST
 DEPLOY_DIR="/home/ec2-user/accad-flask-demo"
 
-# Clean up any existing deployment (prevents "file already exists" errors)
-echo "Cleaning up existing deployment directory..."
-sudo rm -rf $DEPLOY_DIR
-
-# Now create the directory
-sudo mkdir -p $DEPLOY_DIR
-
 # Ensure ec2-user owns the folder
 sudo chown -R ec2-user:ec2-user $DEPLOY_DIR
 
