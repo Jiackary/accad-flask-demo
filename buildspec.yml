@@ -19,6 +19,9 @@ phases:
   post_build:
     commands:
       - echo Build completed successfully.
+      - echo "Listing final artifact directory"
+      - ls -R
 artifacts:
   files:
     - '**/*'
+  base-directory: .
