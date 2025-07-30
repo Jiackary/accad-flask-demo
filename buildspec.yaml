@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - set -e
+      - echo Installing dependencies...
+      - python3 -m venv .venv
+      - source .venv/bin/activate
+      - pip install -r requirements.txt
+  pre_build:
+    commands:
+      - echo Running pre-build steps...
+      - pytest --version
+  build:
+    commands:
+      - echo Running tests...
+      - pytest
+  post_build:
+    commands:
+      - echo Build completed successfully.
+artifacts:
+  files:
+    - '**/*'
